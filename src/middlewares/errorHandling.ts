@@ -17,6 +17,6 @@ export function errorHadling(
     return;
   }
 
-  res.status(500).json({ message: err.message });
+  res.status(500).json({ message: "Erro interno do servidor." })
   return;
 }
