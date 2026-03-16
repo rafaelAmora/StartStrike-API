@@ -58,6 +58,7 @@ export class ControllerLogin {
       expiresIn: "10m",
     });
 
-    return res.status(200).json({ token });
+    const {password : _,...userWithoutPassword}= userExists
+    return res.status(200).json({ token , user : userWithoutPassword });
   }
 }

@@ -18,7 +18,27 @@ export async function syncLeetifyMatches(
       },
     );
 
-    return response.data;
+     for (const match of response.data) {
+          const matchExists = await prisma.match.findUnique({
+            where: {
+              externalMatchId: match.id,
+            },
+          });
+    
+          if (matchExists) continue; // caso exista, pula a criação
+    
+          await prisma.match.create({
+            data: {
+              externalMatchId: match.id,
+              finishedAt: new Date(match.finished_at),
+              mapName: match.map_name,
+              team1Score: match.team_scores[0]?.score ?? 0,
+              team2Score: match.team_scores[1]?.score ?? 0,
+            },
+          });
+        }
+
+        return response.data
   } catch (error: any) {
     if (error.response?.status === 404) {
       throw new AppError("Nenhuma partida encontrada para este perfil.", 404);

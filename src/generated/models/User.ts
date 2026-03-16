@@ -183,7 +183,7 @@ export type UserGroupByOutputType = {
   email: string
   password: string
   steam64Id: string
-  leetifyId: string | null
+  leetifyId: string
   avatarUrl: string | null
   createdAt: Date
   updatedAt: Date
@@ -217,7 +217,7 @@ export type UserWhereInput = {
   email?: Prisma.StringFilter<"User"> | string
   password?: Prisma.StringFilter<"User"> | string
   steam64Id?: Prisma.StringFilter<"User"> | string
-  leetifyId?: Prisma.StringNullableFilter<"User"> | string | null
+  leetifyId?: Prisma.StringFilter<"User"> | string
   avatarUrl?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
@@ -232,7 +232,7 @@ export type UserOrderByWithRelationInput = {
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   steam64Id?: Prisma.SortOrder
-  leetifyId?: Prisma.SortOrderInput | Prisma.SortOrder
+  leetifyId?: Prisma.SortOrder
   avatarUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -250,7 +250,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   name?: Prisma.StringFilter<"User"> | string
   password?: Prisma.StringFilter<"User"> | string
-  leetifyId?: Prisma.StringNullableFilter<"User"> | string | null
+  leetifyId?: Prisma.StringFilter<"User"> | string
   avatarUrl?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
@@ -265,7 +265,7 @@ export type UserOrderByWithAggregationInput = {
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   steam64Id?: Prisma.SortOrder
-  leetifyId?: Prisma.SortOrderInput | Prisma.SortOrder
+  leetifyId?: Prisma.SortOrder
   avatarUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -284,7 +284,7 @@ export type UserScalarWhereWithAggregatesInput = {
   email?: Prisma.StringWithAggregatesFilter<"User"> | string
   password?: Prisma.StringWithAggregatesFilter<"User"> | string
   steam64Id?: Prisma.StringWithAggregatesFilter<"User"> | string
-  leetifyId?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  leetifyId?: Prisma.StringWithAggregatesFilter<"User"> | string
   avatarUrl?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -297,7 +297,7 @@ export type UserCreateInput = {
   email: string
   password: string
   steam64Id: string
-  leetifyId?: string | null
+  leetifyId: string
   avatarUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -312,7 +312,7 @@ export type UserUncheckedCreateInput = {
   email: string
   password: string
   steam64Id: string
-  leetifyId?: string | null
+  leetifyId: string
   avatarUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -327,7 +327,7 @@ export type UserUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   steam64Id?: Prisma.StringFieldUpdateOperationsInput | string
-  leetifyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  leetifyId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -342,7 +342,7 @@ export type UserUncheckedUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   steam64Id?: Prisma.StringFieldUpdateOperationsInput | string
-  leetifyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  leetifyId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -357,7 +357,7 @@ export type UserCreateManyInput = {
   email: string
   password: string
   steam64Id: string
-  leetifyId?: string | null
+  leetifyId: string
   avatarUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -370,7 +370,7 @@ export type UserUpdateManyMutationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   steam64Id?: Prisma.StringFieldUpdateOperationsInput | string
-  leetifyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  leetifyId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -383,7 +383,7 @@ export type UserUncheckedUpdateManyInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   steam64Id?: Prisma.StringFieldUpdateOperationsInput | string
-  leetifyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  leetifyId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -484,7 +484,7 @@ export type UserCreateWithoutPlayerMatchStatsInput = {
   email: string
   password: string
   steam64Id: string
-  leetifyId?: string | null
+  leetifyId: string
   avatarUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -498,7 +498,7 @@ export type UserUncheckedCreateWithoutPlayerMatchStatsInput = {
   email: string
   password: string
   steam64Id: string
-  leetifyId?: string | null
+  leetifyId: string
   avatarUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -528,7 +528,7 @@ export type UserUpdateWithoutPlayerMatchStatsInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   steam64Id?: Prisma.StringFieldUpdateOperationsInput | string
-  leetifyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  leetifyId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -542,7 +542,7 @@ export type UserUncheckedUpdateWithoutPlayerMatchStatsInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   steam64Id?: Prisma.StringFieldUpdateOperationsInput | string
-  leetifyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  leetifyId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -556,7 +556,7 @@ export type UserCreateWithoutUserStatsCacheInput = {
   email: string
   password: string
   steam64Id: string
-  leetifyId?: string | null
+  leetifyId: string
   avatarUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -570,7 +570,7 @@ export type UserUncheckedCreateWithoutUserStatsCacheInput = {
   email: string
   password: string
   steam64Id: string
-  leetifyId?: string | null
+  leetifyId: string
   avatarUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -600,7 +600,7 @@ export type UserUpdateWithoutUserStatsCacheInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   steam64Id?: Prisma.StringFieldUpdateOperationsInput | string
-  leetifyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  leetifyId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -614,7 +614,7 @@ export type UserUncheckedUpdateWithoutUserStatsCacheInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   steam64Id?: Prisma.StringFieldUpdateOperationsInput | string
-  leetifyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  leetifyId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -729,7 +729,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     email: string
     password: string
     steam64Id: string
-    leetifyId: string | null
+    leetifyId: string
     avatarUrl: string | null
     createdAt: Date
     updatedAt: Date
